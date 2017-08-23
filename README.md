@@ -2,7 +2,9 @@
 
 A minimal yet complete application boilerplate for creating React applications with TypeScript.
 
-**Full Application Size:** ~72.6kb (gzipped, including all dependencies)
+**Full Application Size:** ~69.8kb (gzipped, including all dependencies)
+
+Most of size comes from included dependencies. (React, Glamorous, Glamor, React-Router) If you do not use these, you can remove them.
 
 Development: `yarn run watch`
 
@@ -29,3 +31,13 @@ Production: `yarn run build:production`
 
 - Babel polyfills and cross-browser compatibility
 - Testing with Jest and Enzyme
+
+## Application Size
+
+Bundle Visualized:
+
+![Imgur](http://i.imgur.com/A1VU8XD.png)
+
+Webpack Build Output:
+
+![Imgur](http://i.imgur.com/KitU9q4.png)
