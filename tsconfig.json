@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    // "outDir": "dist",
+    // "rootDir": "src",
+    // "sourceMap": true,
+    // "noImplicitAny": true,
+    // "module": "commonjs", 
+    // "target": "es6", // compile to ES2015 (Babel will do the rest)
+    // "jsx": "preserve",
+    // "allowSyntheticDefaultImports": true, // see below
+    // "experimentalDecorators": true,
+    // "strict": true,
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "target": "es6",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "preserve",
+    "strict": true,
+    "types": [
+      "webpack-env",
+      "node"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "./src/**/*"
+  ]
+}
