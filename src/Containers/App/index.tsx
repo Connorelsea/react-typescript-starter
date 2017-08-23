@@ -12,11 +12,11 @@ interface State {
 }
 
 class App extends React.Component<Props, State> {
-  state = {
+  public state = {
     x: 0,
   }
 
-  render() {
+  public render() {
     return (
       <BrowserRouter>
         <Container>
@@ -28,7 +28,7 @@ class App extends React.Component<Props, State> {
   }
 
   @bind
-  onClick() {
+  public onClick() {
     this.setState({
       x: this.state.x + 1,
     })

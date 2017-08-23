@@ -58,7 +58,7 @@ const path = require("path")
 var HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
-  entry: ["react-hot-loader/patch", "./src/index.tsx"],
+  entry: ["react-hot-loader/patch", "react-error-overlay", "./src/index.tsx"],
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname + "/dist"),
@@ -76,6 +76,8 @@ module.exports = {
     extensions: [".ts", ".tsx", ".js", ".json"],
   },
 
+  // TODO: Don't include the hot loader in prod
+
   module: {
     rules: [
       // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
@@ -88,9 +90,17 @@ module.exports = {
           "babel-loader",
           {
             loader: "awesome-typescript-loader",
-            options: { useBabel: true, useCache: true },
+            options: { useBabel: true, useCache: true, sourceMap: true },
           },
         ],
+      },
+      {
+        test: /\.ts$/,
+        enforce: "pre",
+        loader: "tslint-loader",
+        options: {
+          /* Loader options go here */
+        },
       },
     ],
   },

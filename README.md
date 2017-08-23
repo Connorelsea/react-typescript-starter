@@ -2,7 +2,7 @@
 
 A minimal yet complete application boilerplate for creating React applications with TypeScript.
 
-**Full-Application Size:** ~72.6kb (gzipped, including all deps)
+**Full Application Size:** ~72.6kb (gzipped, including all dependencies)
 
 Development: `yarn run watch`
 
@@ -16,17 +16,16 @@ Production: `yarn run build:production`
 - Webpack 3
   - Tree shaking, dynamic imports
   - Built in size-visualization tools
+- Error Overlay during development (From CRA)
 - Hot Reloading
 - Glamorous CSS-in-JS
   - Automatic displayname addition via a babel plugin
-- React Router
+- React Router v4
 - Decorators
   - Included: `@bind`, `@memoize`, `@debounce`
+- TSLint 
 
 ## Upcoming Features
 
-- TS Lint
 - Babel polyfills and cross-browser compatibility
-- Error overlay (from CRA)
-- Decko integration / Decorators
 - Testing with Jest and Enzyme
