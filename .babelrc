@@ -1,4 +1,8 @@
 {
   "presets": [["es2015", { "modules": false }], "stage-0", "react"],
-  "plugins": ["glamorous-displayname", "react-hot-loader/babel"]
+  "plugins": [
+    "transform-decorators-legacy",
+    "glamorous-displayname",
+    "react-hot-loader/babel"
+  ]
 }

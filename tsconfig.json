@@ -19,6 +19,7 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
     "strict": true,
+    "experimentalDecorators": true,
     "types": [
       "webpack-env",
       "node"

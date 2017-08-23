@@ -2,6 +2,12 @@
 
 A minimal yet complete application boilerplate for creating React applications with TypeScript.
 
+**Full-Application Size:** ~72.6kb (gzipped, including all deps)
+
+Development: `yarn run watch`
+
+Production: `yarn run build:production`
+
 ## Features
 
 - React Fiber (v16)
@@ -13,6 +19,9 @@ A minimal yet complete application boilerplate for creating React applications w
 - Hot Reloading
 - Glamorous CSS-in-JS
   - Automatic displayname addition via a babel plugin
+- React Router
+- Decorators
+  - Included: `@bind`, `@memoize`, `@debounce`
 
 ## Upcoming Features
 
@@ -20,5 +29,4 @@ A minimal yet complete application boilerplate for creating React applications w
 - Babel polyfills and cross-browser compatibility
 - Error overlay (from CRA)
 - Decko integration / Decorators
-- React Router
 - Testing with Jest and Enzyme

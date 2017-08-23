@@ -1,18 +1,37 @@
 import React from "react"
 import ReactDOM from "react-dom"
+
+import { bind } from "decko"
 import glamorous from "glamorous"
+import { BrowserRouter } from "react-router-dom"
 
 interface Props {}
 
-interface State {}
+interface State {
+  x: number
+}
 
 class App extends React.Component<Props, State> {
+  state = {
+    x: 0,
+  }
+
   render() {
     return (
-      <Container>
-        Hello <InnerContainer>World</InnerContainer>
-      </Container>
+      <BrowserRouter>
+        <Container>
+          Hello, World!{" "}
+          <Button onClick={this.onClick}>Increment {this.state.x}</Button>
+        </Container>
+      </BrowserRouter>
     )
+  }
+
+  @bind
+  onClick() {
+    this.setState({
+      x: this.state.x + 1,
+    })
   }
 }
 
@@ -22,7 +41,7 @@ const Container = glamorous.div({
   width: "30%",
 })
 
-const InnerContainer = glamorous.div({
+const Button = glamorous.button({
   backgroundColor: "red",
 })
 
