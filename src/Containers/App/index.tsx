@@ -5,6 +5,8 @@ import { bind } from "decko"
 import glamorous from "glamorous"
 import { BrowserRouter } from "react-router-dom"
 
+import Color from "color"
+
 interface Props {}
 
 interface State {

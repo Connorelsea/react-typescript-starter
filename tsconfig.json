@@ -18,7 +18,7 @@
     "target": "es6",
     "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
-    "strict": true,
+    // "strict": true,
     "experimentalDecorators": true,
     "types": [
       "webpack-env",

@@ -40,6 +40,7 @@
     "@types/react": "^16.0.2",
     "@types/react-dom": "^15.5.3",
     "@types/react-router-dom": "^4.0.7",
+    "color": "^2.0.0",
     "decko": "^1.2.0",
     "glamor": "^2.20.40",
     "glamorous": "^4.3.1",
