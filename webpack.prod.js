@@ -13,11 +13,13 @@ var HtmlWebpackPlugin = require("html-webpack-plugin")
 // Experimental Plugins
 const PrepackWebpackPlugin = require("prepack-webpack-plugin").default
 const ShakePlugin = require("webpack-common-shake").Plugin
+const DynamicCdnWebpackPlugin = require("dynamic-cdn-webpack-plugin")
 
 module.exports = {
   entry: ["./src/index.tsx"],
+
   output: {
-    filename: "bundle.js",
+    filename: "[name].[chunkhash].js",
     path: path.resolve(__dirname + "/dist"),
   },
 
@@ -54,7 +56,6 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       template: "src/index.html",
       minify: {
@@ -62,8 +63,19 @@ module.exports = {
         collapseWhitespace: true,
       },
     }),
+    // The hashed module ID plugin is recommend over the named module
+    // plugin for production since it takes less time to run and does not
+    // depend on the path to the modules. This helps with caching chunks
+    // across builds by keeping chunks names the same when they don't change.
+    new webpack.HashedModuleIdsPlugin(),
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify("production"),
+    }),
+    // The CDN plugin kind of works as a vendor bundle for react and react-dom
+    // by fetching them from a CDN on page load instead of in the main bundle.
+    new DynamicCdnWebpackPlugin({
+      env: "production",
+      only: ["react", "react-dom"],
     }),
     new UglifyJSPlugin({
       uglifyOptions: {

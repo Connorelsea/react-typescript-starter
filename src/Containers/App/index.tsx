@@ -1,11 +1,11 @@
 import React from "react"
 import ReactDOM from "react-dom"
-
-import { bind } from "decko"
 import glamorous from "glamorous"
-import { BrowserRouter } from "react-router-dom"
+import { bind } from "decko"
 
-import Color from "color"
+// import { BrowserRouter } from "react-router-dom"
+
+import Button from "../../Elements/Button"
 
 interface Props {}
 
@@ -20,12 +20,14 @@ class App extends React.Component<Props, State> {
 
   public render() {
     return (
-      <BrowserRouter>
-        <Container>
-          Hello, World!{" "}
-          <Button onClick={this.onClick}>Increment {this.state.x}</Button>
-        </Container>
-      </BrowserRouter>
+      // <BrowserRouter>
+      <Container>
+        Hello, World!{" "}
+        {/* <Button onClick={this.onClick}>Increment {this.state.x}</Button> */}
+        <Button onClick={this.onClick}>Click Me</Button>
+        <div>Number of clicks: {this.state.x}</div>
+      </Container>
+      // </BrowserRouter>
     )
   }
 
@@ -38,13 +40,9 @@ class App extends React.Component<Props, State> {
 }
 
 const Container = glamorous.div({
-  backgroundColor: "green",
-  fontSize: 30,
-  width: "30%",
-})
-
-const Button = glamorous.button({
-  backgroundColor: "red",
+  // fontSize: 30,
+  padding: 20,
+  backgroundColor: "#EEEEEE",
 })
 
 export default App

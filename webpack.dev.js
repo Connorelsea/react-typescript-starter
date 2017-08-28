@@ -4,6 +4,9 @@ const path = require("path")
 // Plugins
 var HtmlWebpackPlugin = require("html-webpack-plugin")
 
+// Experimental Plugins
+const DynamicCdnWebpackPlugin = require("dynamic-cdn-webpack-plugin")
+
 module.exports = {
   entry: ["react-hot-loader/patch", "react-error-overlay", "./src/index.tsx"],
   output: {
@@ -58,6 +61,7 @@ module.exports = {
         collapseWhitespace: true,
       },
     }),
+    // new DynamicCdnWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ],
 }
